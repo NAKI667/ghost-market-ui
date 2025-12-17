@@ -53,3 +53,30 @@ ghost-market-ui/
 ├── app.js           # Cart Logic & State Management
 ├── README.md        # Documentation
 └── screenshot.png   # Project Preview
+🚀 HOW TO RUN LOCALLY
+Clone the repository
+
+Bash
+
+git clone [https://github.com/NAKI667/ghost-market-ui.git](https://github.com/NAKI667/ghost-market-ui.git)
+Navigate to project directory
+
+Bash
+
+cd ghost-market-ui
+Launch
+
+Simply open index.html in your favorite browser.
+
+Or use Live Server in VS Code.
+
+👤 AUTHOR
+Akın Kökçü (NAKI)
+
+MIS Student @ Piri Reis University
+
+Cyber Security Enthusiast
+
+Front-End Developer
+
+LinkedIn | GitHub
