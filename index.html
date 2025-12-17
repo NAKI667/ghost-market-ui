@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOST_MARKET | Secure Hardware</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GHOST_<span class="highlight">MARKET</span></div>
+        <div class="menu">
+            <a href="#">Products</a>
+            <a href="#">Encrypted Shipping</a>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>UNTRACEABLE GEAR</h1>
+            <p>Privacy hardware for the modern agent. Tor Network Approved.</p>
+            <button class="cta-btn" onclick="document.querySelector('.container').scrollIntoView({behavior: 'smooth'})">BROWSE CATALOG</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">/// OPERATIONAL TOOLS</h2>
+        
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="badge">BEST SELLER</div>
+                <div class="img-placeholder"><i class="fa-solid fa-key"></i></div>
+                <h3>Titan Security Key</h3>
+                <p class="desc">FIDO2/U2F hardware authentication device.</p>
+                <div class="price-row">
+                    <span class="price">$45.00</span>
+                    <button class="add-btn" onclick="addToCart(1, 'Titan Security Key', 45)">ADD +</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-placeholder"><i class="fa-solid fa-wifi"></i></div>
+                <h3>WiFi Pineapple</h3>
+                <p class="desc">Advanced network auditing and pen-test tool.</p>
+                <div class="price-row">
+                    <span class="price">$120.00</span>
+                    <button class="add-btn" onclick="addToCart(2, 'WiFi Pineapple', 120)">ADD +</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="badge red">LIMITED</div>
+                <div class="img-placeholder"><i class="fa-solid fa-microchip"></i></div>
+                <h3>Flipper Zero</h3>
+                <p class="desc">Multi-tool device for geeks & pentesters.</p>
+                <div class="price-row">
+                    <span class="price">$169.00</span>
+                    <button class="add-btn" onclick="addToCart(3, 'Flipper Zero', 169)">ADD +</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-placeholder"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Faraday Bag</h3>
+                <p class="desc">Blocks all signals. Anti-tracking shield.</p>
+                <div class="price-row">
+                    <span class="price">$25.00</span>
+                    <button class="add-btn" onclick="addToCart(4, 'Faraday Bag', 25)">ADD +</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>/// ENCRYPTED CART</h2>
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+        </div>
+        
+        <div id="cart-items" class="cart-items-container">
+            <p class="empty-msg">No hardware selected...</p>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="total-row">
+                <span>TOTAL:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn">INITIATE TRANSFER</button>
+        </div>
+    </div>
+
+    <div id="overlay" onclick="toggleCart()"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
