@@ -1,7 +1,6 @@
 # 🛒 GHOST_MARKET UI | Secure Hardware Store Concept
 
-![Ghost Market Banner]<img width="1901" height="907" alt="image" src="https://github.com/user-attachments/assets/93be54c3-8214-4426-a34f-d95ede5b0a7e" />
-
+![Ghost Market Banner](screenshot.png)
 
 > **"Privacy is not a crime. It's a right."**
 
@@ -10,7 +9,7 @@
 
 Unlike standard e-commerce templates, this project focuses on **Dark Mode Aesthetics**, **Cyberpunk/Hacker vibes**, and a **Tracker-Free** user experience.
 
-🔗 **Live Demo:** [Click Here to View Deployment](https://naki667.github.io/ghost-market-ui/) *(Link will be active after GitHub Pages setup)*
+🔗 **Live Demo:** [Click Here to View Deployment](https://naki667.github.io/ghost-market-ui/)
 
 ---
 
@@ -53,30 +52,32 @@ ghost-market-ui/
 ├── app.js           # Cart Logic & State Management
 ├── README.md        # Documentation
 └── screenshot.png   # Project Preview
+```
+
+---
 🚀 HOW TO RUN LOCALLY
-Clone the repository
 
-Bash
+## 1. Clone the repository
 
+```
 git clone [https://github.com/NAKI667/ghost-market-ui.git](https://github.com/NAKI667/ghost-market-ui.git)
-Navigate to project directory
-
-Bash
-
+```
+## 2. Navigate to project directory
+```
 cd ghost-market-ui
-Launch
-
+```
+## 3. Launch
 Simply open index.html in your favorite browser.
+Or use Live Server extension in VS Code.
+## 👤 AUTHOR
+- Akın Kökçü (NAKI)
 
-Or use Live Server in VS Code.
+- 🛡️ Cyber Security Enthusiast
 
-👤 AUTHOR
-Akın Kökçü (NAKI)
+- 💻 Front-End Developer
 
-MIS Student @ Piri Reis University
+- 🎓 MIS Student @ Piri Reis University
 
-Cyber Security Enthusiast
+[LinkedIn](https://www.linkedin.com/in/akin-kokcu) | [GitHub](https://github.com/NAKI667)
 
-Front-End Developer
-
-LinkedIn | GitHub
+© 2025 Ghost Market UI Project. Built for educational purposes.
