@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GHOST_MARKET | Secure Hardware</title>
+    <title>Ghost Market | Storefront Demo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,25 +12,24 @@
     <nav>
         <div class="logo">GHOST_<span class="highlight">MARKET</span></div>
         <div class="menu">
-            <a href="#">Products</a>
-            <a href="#">Encrypted Shipping</a>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cart-count">0</span>
-            </div>
+            <a href="#catalog">Products</a>
+            <button class="cart-icon" id="cart-open" type="button" aria-label="Open cart" aria-haspopup="dialog" aria-controls="cart-sidebar">
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                <span id="cart-count" aria-hidden="true">0</span>
+            </button>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h1>UNTRACEABLE GEAR</h1>
-            <p>Privacy hardware for the modern agent. Tor Network Approved.</p>
-            <button class="cta-btn" onclick="document.querySelector('.container').scrollIntoView({behavior: 'smooth'})">BROWSE CATALOG</button>
+            <h1>Ghost Market</h1>
+            <p>A fictional hardware storefront with an interactive cart.</p>
+            <a class="cta-btn" href="#catalog">Browse catalog</a>
         </div>
     </header>
 
-    <main class="container">
-        <h2 class="section-title">/// OPERATIONAL TOOLS</h2>
+    <main id="catalog" class="container">
+        <h2 class="section-title">Products</h2>
         
         <div class="product-grid">
             
@@ -41,7 +40,7 @@
                 <p class="desc">FIDO2/U2F hardware authentication device.</p>
                 <div class="price-row">
                     <span class="price">$45.00</span>
-                    <button class="add-btn" onclick="addToCart(1, 'Titan Security Key', 45)">ADD +</button>
+                    <button class="add-btn" type="button" onclick="addToCart(1, 'Titan Security Key', 45)">Add to cart</button>
                 </div>
             </div>
 
@@ -51,7 +50,7 @@
                 <p class="desc">Advanced network auditing and pen-test tool.</p>
                 <div class="price-row">
                     <span class="price">$120.00</span>
-                    <button class="add-btn" onclick="addToCart(2, 'WiFi Pineapple', 120)">ADD +</button>
+                    <button class="add-btn" type="button" onclick="addToCart(2, 'WiFi Pineapple', 120)">Add to cart</button>
                 </div>
             </div>
 
@@ -59,46 +58,44 @@
                 <div class="badge red">LIMITED</div>
                 <div class="img-placeholder"><i class="fa-solid fa-microchip"></i></div>
                 <h3>Flipper Zero</h3>
-                <p class="desc">Multi-tool device for geeks & pentesters.</p>
+                <p class="desc">A portable multi-tool for exploring supported wireless protocols.</p>
                 <div class="price-row">
                     <span class="price">$169.00</span>
-                    <button class="add-btn" onclick="addToCart(3, 'Flipper Zero', 169)">ADD +</button>
+                    <button class="add-btn" type="button" onclick="addToCart(3, 'Flipper Zero', 169)">Add to cart</button>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="img-placeholder"><i class="fa-solid fa-shield-halved"></i></div>
                 <h3>Faraday Bag</h3>
-                <p class="desc">Blocks all signals. Anti-tracking shield.</p>
+                <p class="desc">A signal-shielding pouch for compatible devices.</p>
                 <div class="price-row">
                     <span class="price">$25.00</span>
-                    <button class="add-btn" onclick="addToCart(4, 'Faraday Bag', 25)">ADD +</button>
+                    <button class="add-btn" type="button" onclick="addToCart(4, 'Faraday Bag', 25)">Add to cart</button>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <div id="cart-sidebar" class="sidebar">
+    <dialog id="cart-sidebar" class="sidebar" aria-labelledby="cart-title">
         <div class="sidebar-header">
-            <h2>/// ENCRYPTED CART</h2>
-            <span class="close-btn" onclick="toggleCart()">&times;</span>
+            <h2 id="cart-title">Your cart</h2>
+            <button id="cart-close" class="close-btn" type="button" aria-label="Close cart" autofocus>&times;</button>
         </div>
         
         <div id="cart-items" class="cart-items-container">
-            <p class="empty-msg">No hardware selected...</p>
+            <p class="empty-msg">Your cart is empty.</p>
         </div>
 
         <div class="sidebar-footer">
             <div class="total-row">
                 <span>TOTAL:</span>
-                <span id="cart-total">$0.00</span>
+                <span id="cart-total" role="status" aria-label="Cart total">$0.00</span>
             </div>
-            <button class="checkout-btn">INITIATE TRANSFER</button>
+            <p class="cart-note">Demo only. Orders and payments are unavailable.</p>
         </div>
-    </div>
-
-    <div id="overlay" onclick="toggleCart()"></div>
+    </dialog>
 
     <script src="app.js"></script>
 </body>

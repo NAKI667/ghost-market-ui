@@ -55,6 +55,9 @@ nav {
 .menu a:hover { color: var(--accent); }
 
 .cart-icon {
+    background: none;
+    border: 0;
+    padding: 0;
     position: relative;
     cursor: pointer;
     font-size: 1.4rem; /* İkonu biraz büyüttük */
@@ -107,6 +110,8 @@ nav {
 }
 
 .cta-btn {
+    display: inline-block;
+    text-decoration: none;
     background: transparent;
     border: 1px solid var(--accent);
     color: var(--accent);
@@ -125,7 +130,8 @@ nav {
 }
 
 /* --- PRODUCT GRID --- */
-.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.container {
+    scroll-margin-top: 70px; max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 .section-title { 
     border-left: 4px solid var(--accent); 
     padding-left: 15px; 
@@ -211,32 +217,31 @@ nav {
 }
 .add-btn:hover { background: var(--accent); }
 
-/* --- SIDEBAR CART (SAĞ PANEL) --- */
 .sidebar {
-    height: 100vh; /* Ekran boyu kadar */
-    width: 100%;   /* Mobilde tam ekran */
-    max-width: 400px; /* PC'de 400px ile sınırla */
-    
-    position: fixed;
-    z-index: 2000; /* En üstte durmalı (Overlay 900'de) */
-    top: 0;
-    right: -100%; /* Ekranın sağında gizli */
-    
-    background-color: #0a0a0a;
-    border-left: 1px solid var(--accent); /* Çizgi artık solda */
-    box-shadow: -5px 0 30px rgba(0,0,0,0.8); /* Gölge sola düşmeli */
-    
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Sağdan geliş animasyonu */
+    box-sizing: border-box;
+    width: min(100%, 400px);
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    margin: 0 0 0 auto;
+    padding: 0;
+    border: 0;
+    border-left: 1px solid var(--accent);
+    background: #0a0a0a;
+    color: var(--text);
+    box-shadow: -5px 0 30px rgba(0,0,0,0.8);
+}
+
+.sidebar[open] {
     display: flex;
     flex-direction: column;
 }
 
-/* Aktif olunca sağdan 0 noktasına gelir */
-.sidebar.active { 
-    right: 0; 
+.sidebar::backdrop {
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(3px);
 }
 
-/* --- Sidebar İçeriği --- */
 .sidebar-header {
     padding: 20px;
     background: #111;
@@ -249,7 +254,9 @@ nav {
 
 .sidebar-header h2 { font-size: 1.1rem; color: var(--accent); margin: 0; }
 
-.close-btn { 
+.close-btn {
+    background: none;
+    border: 0;
     font-size: 2rem; 
     cursor: pointer; 
     color: var(--text); 
@@ -333,22 +340,9 @@ nav {
     text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
 }
 
-.checkout-btn {
-    width: 100%;
-    padding: 15px;
-    background: var(--accent);
-    color: #000;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: inherit;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-.checkout-btn:hover { 
-    background: #fff; 
-    box-shadow: 0 0 20px var(--accent); 
+.cart-note {
+    margin: 0;
+    color: var(--text);
 }
 
 /* --- MOBİL OPTİMİZASYON --- */
@@ -364,22 +358,7 @@ nav {
     .qty-btn { width: 35px; height: 35px; }
 }
 
-/* --- OVERLAY --- */
-#overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.8);
-    z-index: 900;
-    backdrop-filter: blur(3px);
-}
-#overlay.active { display: block; }
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 600px) {
-    .sidebar { width: 85%; }
-    .hero h1 { font-size: 1.8rem; }
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
